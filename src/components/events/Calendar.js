@@ -6,13 +6,15 @@ import dayGridPlugin from "@fullcalendar/daygrid"
 import listPlugin from "@fullcalendar/list"
 
 // must manually import the stylesheets for each plugin
-import "@fullcalendar/core/main.css"
+import "@fullcalendar/daygrid/main.css"
+import "@fullcalendar/list/main.css"
 import "./Calendar.scss"
 
 export default function Calendar() {
   const calendar_id = "qkav3svfbo9sp6uo02linq2828@group.calendar.google.com"
   const api_key = "AIzaSyDKNdzqDgn532Txp-9sGUjR1-VElQXjXh4"
   const [events, setEvents] = useState([])
+  const [listView, setListView] = useState(false)
   const calendarRef = createRef()
 
   const getGoogleCalendarEvents = () => {
@@ -21,7 +23,6 @@ export default function Calendar() {
         `https://www.googleapis.com/calendar/v3/calendars/${calendar_id}/events?key=${api_key}&singleEvents=true&maxResults=9999`
       )
       .then(res => {
-        console.log(res)
         const events = res.data.items.map(item => {
           return {
             title: item.summary,
@@ -31,16 +32,41 @@ export default function Calendar() {
             location: item.location,
           }
         })
-        console.log(events)
         setEvents(events)
       })
   }
 
+  // fetch data from google on mount
   useEffect(() => {
     getGoogleCalendarEvents()
   }, [])
 
-  console.log(events)
+  // Toggle view for screen sizes
+  useEffect(() => {
+    function updateSize() {
+      if (window.innerWidth < 768 && !listView) {
+        console.log(calendarRef)
+        if (calendarRef.current) {
+          let api = calendarRef.current.getApi()
+          api.changeView("listWeek")
+          console.log(api)
+        }
+        setListView(true)
+      } else if (window.innerWidth >= 768 && listView) {
+        if (calendarRef.current) {
+          let api = calendarRef.current.getApi()
+          api.changeView("dayGridMonth")
+          console.log(api)
+        }
+        setListView(false)
+      }
+    }
+
+    window.addEventListener("resize", updateSize)
+    updateSize()
+
+    return () => window.removeEventListener("resize", updateSize)
+  }, [calendarRef])
 
   const formatTime = (startObj, endObj) => {
     const getMeridiem = twentyFourHour => {
@@ -67,7 +93,6 @@ export default function Calendar() {
   }
 
   const EventDetailRender = ({ event, el }) => {
-    console.log(event)
     formatTime(event.start, event.end)
     const content = (
       <div className="custom-event">
@@ -76,27 +101,20 @@ export default function Calendar() {
         <div>{event.extendedProps.location}</div>
       </div>
     )
-    ReactDOM.render(content, el)
-    return el
+    return content
   }
-
-  const handleViewChange = () => {
-    console.log(calendarRef.current.getApi())
-  }
-
-  console.log(handleViewChange())
 
   return (
     <FullCalendar
-      defaultView="dayGridMonth"
-      header={{
+      initialView="dayGridMonth"
+      headerToolbar={{
         left: "prev,next today",
         center: "",
         right: "title",
       }}
       plugins={[dayGridPlugin, listPlugin]}
       events={events}
-      eventRender={EventDetailRender}
+      eventContent={EventDetailRender}
       ref={calendarRef}
     />
   )

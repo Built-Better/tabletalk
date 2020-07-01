@@ -16,6 +16,11 @@ header {
       align-items: center;
       height: 100%;
 
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
       @include md {
         position: absolute;
       }

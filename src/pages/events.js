@@ -9,7 +9,7 @@ const EventsPage = props => {
     <Layout>
       <SEO title="Home" />
       <div className="container default-container">
-        <h1 className="mb-5">Events</h1>
+        <h1 className="mb-5">EVENTS</h1>
         <Calendar />
       </div>
     </Layout>

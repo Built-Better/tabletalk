@@ -11,7 +11,7 @@ const Contact = () => (
   <Layout>
     <SEO title="Contact" />
     <div className="container default-container">
-      <h1>Contact</h1>
+      <h1>CONTACT</h1>
       <ContactForm />
       <GoogleMap />
       <Territory />

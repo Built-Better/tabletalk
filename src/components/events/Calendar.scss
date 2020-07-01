@@ -26,7 +26,7 @@
   border: 1px solid black;
   border-bottom: none;
 
-  .fc-right h2 {
+  .fc-toolbar-title {
     font-family: $header-font;
     font-weight: bold;
     color: white;
@@ -66,23 +66,60 @@
   }
 }
 
-.fc-body {
-  .fc-day-number {
+.fc-view {
+  .fc-daygrid-event {
+    border: 1px solid;
+    border-radius: 0;
+  }
+  .fc-daygrid-day-number {
     color: black;
     font-family: $body-font;
     font-weight: bold;
-    padding: 3px;
+    padding: 0px;
     width: 20px;
     text-align: center;
   }
 
-  .fc-event {
+  .fc-daygrid-day {
     background-color: white;
     border: 1px solid black;
     border-radius: 0;
+  }
+  .fc-daygrid-day.fc-day-today {
+    background-color: #80808047;
   }
 }
 
 .fc-unthemed td {
   border-color: black;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: 1px solid black;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+}
+
+// List View Plugin
+.fc-theme-standard .fc-list {
+  border: 1px solid black;
+}
+
+.fc .fc-list-event-dot {
+  display: none;
+}
+
+@include sm {
+  .fc-header-toolbar {
+    flex-flow: column-reverse;
+  }
+
+  .fc-toolbar .fc-toolbar-title {
+    font-size: 28px;
+    margin-bottom: 1rem;
+  }
 }

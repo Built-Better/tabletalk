@@ -16,10 +16,10 @@ const Header = ({ siteTitle }) => {
   return (
     <header>
       <div className="nav container">
-        <span className="logo-container">
+        <Link to="/" className="logo-container">
           <img src={LogoSVG} alt="table talk logo" />
           <h3 className="pl-3 body-font">THIS IS TABLE TALK</h3>
-        </span>
+        </Link>
         <span className="menu">
           <Link to="/">Home</Link>
           <Link to="/events">Events</Link>
