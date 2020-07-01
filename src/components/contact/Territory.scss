@@ -1,0 +1,13 @@
+@import "../../utililties/theme.scss";
+
+.territory {
+  border: {
+    top: 2px solid black;
+    bottom: 2px solid black;
+  }
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+  font-family: $body-font;
+  text-align: center;
+}

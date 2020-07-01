@@ -1,0 +1,67 @@
+@import "../../utililties/theme.scss";
+
+#igFeed {
+  img,
+  video {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+
+    @include sm {
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+    }
+  }
+
+  .ig-grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    .column {
+      position: relative;
+
+      &:nth-of-type(3n) {
+        padding-right: 0 !important;
+      }
+
+      &:hover {
+        .overlay {
+          opacity: 1;
+          transition: opacity ease-in 0.1s;
+        }
+      }
+
+      .overlay {
+        position: absolute;
+        height: calc(100% - 10px);
+        width: calc(100% - 10px);
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: #00000099;
+        opacity: 0;
+
+        span {
+          &:nth-of-type(1) {
+            padding-right: 25px;
+          }
+
+          font-size: 24px;
+
+          svg {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  video {
+    object-fit: cover;
+    position: absolute;
+    max-height: fit-content;
+    left: 0;
+    top: 0;
+  }
+}

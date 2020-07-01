@@ -1,0 +1,153 @@
+@import "../../../utililties/theme.scss";
+
+.mobile-menu-container {
+  position: absolute;
+  right: 0;
+  display: none;
+
+  @include md {
+    display: block;
+  }
+}
+
+.mobile-menu {
+  margin: 0 20px 0 0;
+  padding-left: 1.25em;
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  text-align: right;
+  list-style-type: none;
+
+  @include md {
+    margin-left: 20px;
+  }
+}
+
+.mobile-menu-close {
+  font-size: 0em;
+  opacity: 0;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  z-index: 12;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.mobile-menu-close-visible {
+  font-size: 2em;
+  opacity: 1;
+
+  -webkit-transition: 0.2s 0.4s;
+  transition: 0.2s 0.4s;
+}
+
+.mobile-menu-global {
+  z-index: -1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  height: 10px;
+  width: 100%;
+  background-color: #ffffff;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.mobile-menu-global:hover {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.mobile-menu-top {
+  top: 0;
+}
+.mobile-menu-middle {
+  top: 18px;
+}
+.mobile-menu-bottom {
+  top: 36px;
+}
+
+.mobile-menu-text {
+  opacity: 0;
+  font-size: 0em;
+  padding: 10px 0;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  font-family: $body-font;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.expand {
+  box-shadow: rgba(0, 0, 0, 0.1) -2.5px 5px 7.5px,
+    rgba(0, 0, 0, 0.1) 2.5px 5px 7.5px;
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  left: -200px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 11;
+}
+
+.mobile-menu-top-expand {
+  top: 0px;
+  background: #fff8e1;
+
+  -webkit-transition: all 0.5s 0.2s, right 0.1s;
+  transition: all 0.5s 0.2s, right 0.1s;
+}
+
+.mobile-menu-middle-expand {
+  top: 100px;
+  background: #ffecb3;
+
+  -webkit-transition: all 0.5s 0.1s, right 0.1s;
+  transition: all 0.5s 0.1s, right 0.1s;
+}
+
+.mobile-menu-middle-expand:nth-of-type(2) {
+  top: 100px;
+  background-color: #ffde59;
+}
+
+.mobile-menu-middle-expand:nth-of-type(3) {
+  top: 150px;
+  background-color: #ffcc00;
+}
+
+.mobile-menu-middle-expand:nth-of-type(4) {
+  top: 200px;
+  background-color: #b9b9b9;
+}
+
+.mobile-menu-middle-expand:nth-of-type(5) {
+  top: 250px;
+  background-color: black;
+}
+
+.mobile-menu-bottom-expand {
+  top: 300px;
+  height: 50px;
+  background: #ffe082;
+  -webkit-transition: all 0.5s, right 0.1s;
+  transition: all 0.5s, right 0.1s;
+}
+
+.mobile-menu-text-expand {
+  color: #000000;
+  opacity: 0.8;
+  padding: 10px;
+  font-size: 1.3em;
+  -webkit-transition: all 0.2s 0.7s, font-size 0.1s;
+  transition: all 0.2s 0.7s, font-size 0.1s;
+}

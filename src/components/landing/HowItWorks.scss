@@ -1,0 +1,88 @@
+@import "../../utililties/theme.scss";
+
+#how-it-works {
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+  position: relative;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+
+  .yellow-block {
+    position: absolute;
+    left: -300px;
+    top: 100px;
+    z-index: -1;
+  }
+
+  .yellow-block-filled {
+    position: absolute;
+    left: -400px;
+    top: 200px;
+    z-index: -2;
+  }
+
+  .grey-block {
+    position: absolute;
+    right: -150px;
+    bottom: 0px;
+    z-index: -2;
+  }
+
+  .yellow-block-sm {
+    position: absolute;
+    right: -300px;
+    bottom: 0px;
+    z-index: -2;
+
+    img {
+      height: 350px;
+    }
+  }
+
+  h1 {
+    margin-bottom: 4rem;
+  }
+
+  .summary,
+  .card-row {
+    padding-left: 60px;
+
+    @include md {
+      padding-left: 0;
+    }
+  }
+
+  .card-row {
+    padding-top: 6rem;
+
+    .card-col-first {
+      @include lg {
+        margin-bottom: 3rem;
+      }
+    }
+
+    .card {
+      text-align: center;
+      box-shadow: 0px 3px 6px #00000029;
+      padding: 35px;
+      height: 100%;
+
+      img {
+        width: 180px;
+        margin: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      h2 {
+        font-family: $header-font;
+        padding: 2rem 0;
+        margin: 0;
+      }
+
+      p {
+        line-height: 1.5;
+      }
+    }
+  }
+}

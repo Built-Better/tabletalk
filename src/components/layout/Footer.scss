@@ -1,0 +1,77 @@
+@import "../../utililties/theme.scss";
+
+footer {
+  padding-top: 8rem;
+
+  p {
+    margin: {
+      top: 0.5em;
+      bottom: 0.5em;
+    }
+  }
+
+  a {
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      p {
+        color: $primary-color;
+      }
+    }
+
+    svg {
+      margin-right: 10px;
+      font-size: 20px;
+      color: $primary-color;
+      width: 20px !important;
+    }
+    p {
+      color: $secondary-color;
+      margin: {
+        top: 0.25em;
+        bottom: 0.25em;
+      }
+    }
+  }
+
+  .ft-logo {
+    max-width: 100%;
+  }
+
+  .ft-bottom {
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+
+    a {
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    p {
+      margin: 0.25em;
+    }
+
+    .builtbetter {
+      svg {
+        margin-left: 5px;
+      }
+
+      &:hover {
+        p,
+        a,
+        svg {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "built-better-technology-web-template",
+  "private": true,
+  "description": "Gatsby site for Built Better Technology",
+  "version": "0.1.0",
+  "author": "Darian Sampare <darian@builtbetter.tech>",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-brands-svg-icons": "^5.13.1",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@fullcalendar/core": "^4.4.2",
+    "@fullcalendar/daygrid": "^5.1.0",
+    "@fullcalendar/list": "^5.1.0",
+    "@fullcalendar/react": "^4.4.2",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "gatsby": "^2.20.22",
+    "gatsby-image": "^2.3.2",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-react-helmet": "^3.2.2",
+    "gatsby-plugin-sass": "^2.2.3",
+    "gatsby-plugin-sharp": "^2.5.4",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-source-graphql": "^2.4.0",
+    "gatsby-transformer-sharp": "^2.4.4",
+    "node-sass": "^4.13.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.1",
+    "react-hook-form": "^5.7.2",
+    "react-scroll-parallax": "^2.3.3",
+    "react-toastify": "^6.0.6",
+    "save": "^2.4.0"
+  },
+  "devDependencies": {
+    "prettier": "2.0.4"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

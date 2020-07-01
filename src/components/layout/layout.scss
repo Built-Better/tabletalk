@@ -1,0 +1,72 @@
+@import "../../utililties/theme.scss";
+
+// Elements
+.bootstrap-overrides {
+  body,
+  a,
+  p {
+    font-family: $body-font;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-family: $header-font;
+  }
+
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 20px;
+    font-family: $body-font;
+  }
+}
+
+main {
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+
+// Class declarations
+.header-font {
+  font-family: $header-font;
+}
+
+.body-font {
+  font-family: $body-font;
+}
+
+.color-secondary {
+  color: $secondary-color;
+}
+
+.default-container {
+  padding-top: 4rem;
+}
+
+// Toastify Overrides
+.Toastify__toast {
+  border-radius: 4px;
+  background-color: $primary-color !important;
+  padding: 20px;
+  text-align: center;
+}
+
+.Toastify__toast-body {
+  white-space: pre-line;
+  font-family: $body-font;
+  color: black;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.Toastify__close-button--default {
+  color: black !important;
+}

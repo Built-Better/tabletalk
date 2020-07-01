@@ -1,0 +1,88 @@
+@import "../../utililties/theme.scss";
+
+.custom-event {
+  font-family: $body-font;
+  font-size: 14px;
+  border-left: 4px solid $primary-color;
+  padding: {
+    top: 3px;
+    left: 5px;
+    bottom: 3px;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+  .time {
+    padding-bottom: 5px;
+  }
+}
+
+// Full Calendar overrides
+.fc-toolbar {
+  margin-bottom: 0 !important;
+  background-color: $primary-color;
+  padding: 20px;
+  border: 1px solid black;
+  border-bottom: none;
+
+  .fc-right h2 {
+    font-family: $header-font;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px 3px 6px #00000029;
+    font-size: 32px;
+  }
+
+  .fc-button-group > .fc-button {
+    background-color: white;
+  }
+
+  .fc-icon {
+    color: #6e6868;
+  }
+
+  .fc-button-primary {
+    color: #fff;
+    background-color: #6e6868;
+    border-color: #6e6868;
+  }
+}
+
+.fc-head {
+  .fc-day-header {
+    padding: {
+      top: 5px;
+      bottom: 5px;
+    }
+    &:not(:last-of-type) {
+      border-right-color: white;
+    }
+
+    span {
+      font-family: $body-font;
+      font-weight: bold;
+    }
+  }
+}
+
+.fc-body {
+  .fc-day-number {
+    color: black;
+    font-family: $body-font;
+    font-weight: bold;
+    padding: 3px;
+    width: 20px;
+    text-align: center;
+  }
+
+  .fc-event {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0;
+  }
+}
+
+.fc-unthemed td {
+  border-color: black;
+}

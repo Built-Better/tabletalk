@@ -1,0 +1,99 @@
+@import "../../utililties/theme.scss";
+
+#about {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include sm {
+    margin-bottom: 4rem;
+  }
+
+  h1 {
+    margin-bottom: 4rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  .row {
+    &:first-of-type {
+      margin-bottom: 8rem;
+
+      @include sm {
+        margin: 0;
+      }
+
+      .text-col {
+        padding-left: 60px;
+
+        @include md {
+          padding-left: 15px;
+        }
+
+        @include sm {
+          padding-left: 0;
+        }
+      }
+    }
+
+    &:nth-of-type(2) {
+      .text-col {
+        padding-right: 60px;
+
+        @include md {
+          padding-right: 15px;
+        }
+      }
+    }
+
+    .icon-col {
+      text-align: center;
+
+      img {
+        width: 180px;
+
+        @include sm {
+          margin: {
+            top: 3rem;
+            bottom: 3rem;
+          }
+        }
+      }
+    }
+  }
+
+  .yellow-block {
+    position: absolute;
+    left: -350px;
+    top: 200px;
+    z-index: -1;
+  }
+
+  .yellow-block-filled {
+    position: absolute;
+    left: -450px;
+    top: 50px;
+    z-index: -2;
+  }
+
+  .grey-block {
+    position: absolute;
+    right: -200px;
+    bottom: 0px;
+    z-index: -2;
+  }
+
+  .yellow-block-sm {
+    position: absolute;
+    right: -350px;
+    bottom: 0px;
+    z-index: -1;
+
+    img {
+      height: 350px;
+    }
+  }
+}
