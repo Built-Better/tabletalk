@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "gatsby"
 
 import "./mobilemenu.scss"
 import MenuItem from "./MenuItem"
+import { GlobalDispatchContext } from "../../../context/GlobalContextProvider"
 
 export default function MobileMenu() {
+  // Global state
+  const dispatch = useContext(GlobalDispatchContext)
+
   const [menuOpen, setMenuOpen] = useState(false)
   const [windowWidth, setWindowWidth] = useState(undefined)
   const [windowHeight, setWindowHeight] = useState(undefined)
@@ -22,13 +26,16 @@ export default function MobileMenu() {
 
   const menuStyle = {
     width: windowWidth,
-    left: `-${windowWidth - 70}px`,
+    left: `-${windowWidth - 60}px`,
     height: windowHeight / 6,
   }
 
   return (
     <div className="mobile-menu-container" style={menuOpen ? { top: "0" } : {}}>
-      <ul className="mobile-menu" onClick={toggleMenu}>
+      <ul
+        className={`mobile-menu ${menuOpen ? "menu-expand" : ""}`}
+        onClick={toggleMenu}
+      >
         <div
           className={`mobile-menu-close fa fa-close ${
             menuOpen ? "mobile-menu-close-visible" : ""
@@ -85,6 +92,7 @@ export default function MobileMenu() {
             menuOpen ? "mobile-menu-bottom-expand expand" : ""
           }`}
           style={menuOpen ? { ...menuStyle, top: menuStyle.height * 5 } : {}}
+          onClick={() => dispatch({ type: "TOGGLE_DONATE" })}
         >
           <span
             className={`mobile-menu-text ${

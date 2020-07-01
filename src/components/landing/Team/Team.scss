@@ -2,6 +2,7 @@
 
 #team {
   margin-bottom: 8rem;
+  overflow: hidden;
 
   h1 {
     margin-bottom: 4rem;
@@ -9,6 +10,10 @@
   .team-member {
     &:not(:first-of-type) {
       padding-top: 8rem;
+    }
+
+    &:last-of-type {
+      margin-bottom: 1rem;
     }
 
     .text-left-aligned {

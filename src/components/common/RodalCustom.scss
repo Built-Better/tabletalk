@@ -1,0 +1,61 @@
+@import "../../utililties/theme.scss";
+
+// Rodal overrides
+.rodal {
+  z-index: 10000 !important;
+
+  .rodal-dialog {
+    @include sm {
+      overflow-y: scroll;
+      height: auto !important;
+    }
+  }
+}
+
+// Rodal Conent
+.rodal-content {
+  padding: 50px;
+
+  @include sm {
+    padding: 10px;
+  }
+
+  h2 {
+    font-family: $header-font;
+    margin-bottom: 2rem;
+  }
+
+  p,
+  li {
+    line-height: 1.7;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  .close-rodal {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: $primary-color;
+    width: 2em;
+    height: 2em;
+
+    @include sm {
+      right: 10px;
+      top: 10px;
+    }
+  }
+
+  .contact {
+    padding-top: 5rem;
+    text-align: center;
+
+    @include sm {
+      text-align: left;
+    }
+  }
+}

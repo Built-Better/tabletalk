@@ -3,10 +3,17 @@ import React from "react"
 export const GlobalStateContext = React.createContext()
 export const GlobalDispatchContext = React.createContext()
 
-const initialState = {}
+const initialState = {
+  donateOpen: false,
+}
 
 function reducer(state, action) {
   switch (action.type) {
+    case "TOGGLE_DONATE":
+      return {
+        ...state,
+        donateOpen: !state.donateOpen,
+      }
     default:
       throw new Error("Bad action type")
   }

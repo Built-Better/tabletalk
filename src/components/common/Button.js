@@ -8,7 +8,7 @@ const Button = props => {
     return (
       <button
         className={`button-${props.type} button-${props.size} button-global`}
-        onClick={props.handleClick()}
+        onClick={props.handleClick}
       >
         {props.title}
       </button>

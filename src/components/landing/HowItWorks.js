@@ -38,14 +38,18 @@ export default function HowItWorks() {
           <Parallax className="yellow-block-sm" y={[-20, 20]}>
             <img src={YellowBlock} alt="Yellow floating block small" />
           </Parallax>
-          <h1>How It Works</h1>
+          <h1 data-aos="fade-up" data-aos-duration="750">
+            How It Works
+          </h1>
           <p
             className="summary"
             dangerouslySetInnerHTML={createMarkup(data.content.section_summary)}
+            data-aos="fade-right"
+            data-aos-duration="750"
           ></p>
           <div className="row card-row">
             <div className="col-12 col-lg-6 card-col-first">
-              <div className="card">
+              <div className="card" data-aos="flip-up">
                 <img src={WifiSVG} alt="Online icon" />
                 <h2>{data.content.card_1_title}</h2>
                 <p
@@ -56,7 +60,7 @@ export default function HowItWorks() {
               </div>
             </div>
             <div className="col-12 col-lg-6">
-              <div className="card">
+              <div className="card" data-aos="flip-up">
                 <img src={PeopleSVG} alt="In person icon" />
                 <h2>{data.content.card_2_title}</h2>
                 <p

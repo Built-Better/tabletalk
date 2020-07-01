@@ -11,11 +11,21 @@ const Contact = () => (
   <Layout>
     <SEO title="Contact" />
     <div className="container default-container">
-      <h1>CONTACT</h1>
-      <ContactForm />
-      <GoogleMap />
-      <Territory />
-      <ContactInfo />
+      <h1 data-aos="fade-up" data-aos-duration="750">
+        CONTACT
+      </h1>
+      <div data-aos="flip-up" data-aos-delay="500" data-aos-duration="750">
+        <ContactForm />
+      </div>
+      <div data-aos="fade-up" data-aos-duration="750">
+        <GoogleMap />
+      </div>
+      <div data-aos="fade-up" data-aos-duration="750">
+        <Territory />
+      </div>
+      <div data-aos="flip-up" data-aos-delay="500" data-aos-duration="750">
+        <ContactInfo />
+      </div>
     </div>
   </Layout>
 )

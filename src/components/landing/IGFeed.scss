@@ -1,6 +1,7 @@
 @import "../../utililties/theme.scss";
 
 #igFeed {
+  overflow: hidden;
   img,
   video {
     width: calc(100% - 10px);
@@ -15,6 +16,7 @@
   .ig-grid {
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
 
     .column {
       position: relative;
@@ -41,6 +43,11 @@
         color: white;
         background-color: #00000099;
         opacity: 0;
+
+        @include sm {
+          height: 100%;
+          width: 100%;
+        }
 
         span {
           &:nth-of-type(1) {

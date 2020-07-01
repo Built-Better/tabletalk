@@ -26,23 +26,41 @@ export default function About() {
   return (
     <ParallaxProvider>
       <div id="about" className="container position-relative">
-        <h1>About Table Talk</h1>
+        <h1 data-aos="fade-up" data-aos-duration="750">
+          About Table Talk
+        </h1>
         <div className="row">
-          <div className="col-12 col-md-8 text-col">
+          <div
+            className="col-12 col-md-8 text-col"
+            data-aos="fade-right"
+            data-aos-duration="750"
+          >
             <h2 className="header-font">{data.content.header_1}</h2>
             <p
               dangerouslySetInnerHTML={createMarkup(data.content.body_text_1)}
             ></p>
           </div>
-          <div className="col-12 col-md-4 icon-col">
+          <div
+            className="col-12 col-md-4 icon-col"
+            data-aos="fade-left"
+            data-aos-duration="750"
+          >
             <img src={ChatSVG} alt="chat icon" />
           </div>
         </div>
         <div className="row">
-          <div className="col-12 col-md-4 icon-col order-2 order-md-1">
+          <div
+            className="col-12 col-md-4 icon-col order-2 order-md-1"
+            data-aos="fade-right"
+            data-aos-duration="750"
+          >
             <img src={GlobeSVG} alt="globe icon" />
           </div>
-          <div className="col-12 col-md-8 text-col order-1 order-md-2">
+          <div
+            className="col-12 col-md-8 text-col order-1 order-md-2"
+            data-aos="fade-left"
+            data-aos-duration="750"
+          >
             <h2 className="header-font">{data.content.header_2}</h2>
             <p
               dangerouslySetInnerHTML={createMarkup(data.content.body_text_2)}

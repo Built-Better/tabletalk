@@ -41,7 +41,9 @@ export default function Team() {
 
   return (
     <div id="team" className="container">
-      <h1>The Faces Behind Table Talk</h1>
+      <h1 data-aos="fade-up" data-aos-duration="750">
+        The Faces Behind Table Talk
+      </h1>
       <ParallaxProvider>{team_members}</ParallaxProvider>
     </div>
   )

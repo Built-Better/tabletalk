@@ -4,12 +4,11 @@ import { navigate } from "gatsby"
 export default function MenuItem(props) {
   const styles = {
     ...props.styles,
-    top: props.top,
+    top: props.top + 1,
   }
 
   const handleLinkClick = () => {
     navigate(props.route)
-    console.log(props.route)
   }
 
   return (

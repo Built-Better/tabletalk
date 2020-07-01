@@ -1,14 +1,21 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import AOS from "aos"
+import "aos/dist/aos.css"
 
 import Header from "./header"
 import Footer from "./Footer"
 import "./layout.scss"
 import "bootstrap/dist/css/bootstrap.css"
+import RodalCustom from "../common/RodalCustom"
+import {
+  GlobalStateContext,
+  GlobalDispatchContext,
+} from "../../context/GlobalContextProvider"
+import DonateRodalContent from "../common/DonateRodalConent"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -37,6 +44,15 @@ const Layout = ({ children }) => {
     }
   })
 
+  const toggleDonate = () => {
+    dispatch({ type: "TOGGLE_DONATE" })
+  }
+
+  // Global state
+  const state = useContext(GlobalStateContext)
+  const dispatch = useContext(GlobalDispatchContext)
+
+  console.log(state)
   return (
     <div className="bootstrap-overrides">
       <Header siteTitle={data.site.siteMetadata.title} />
@@ -51,6 +67,11 @@ const Layout = ({ children }) => {
         draggable={true}
       />
       <Footer />
+      <RodalCustom
+        open={state.donateOpen}
+        toggle={toggleDonate}
+        content={<DonateRodalContent />}
+      />
     </div>
   )
 }

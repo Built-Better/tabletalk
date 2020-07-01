@@ -28,10 +28,21 @@ export default function TeamMember(props) {
   return (
     <div className="row team-member">
       <div className={`col-12 col-lg-6 ${text_col_position}`}>
-        <h2 className="header-font font-weight-bold">{props.position}</h2>
-        <span dangerouslySetInnerHTML={createMarkup(props.writeUp)}></span>
+        <h2
+          className="header-font font-weight-bold"
+          data-aos={props.positioning === "left" ? "fade-right" : "fade-left"}
+          data-aos-duration="750"
+        >
+          {props.position}
+        </h2>
+        <div
+          dangerouslySetInnerHTML={createMarkup(props.writeUp)}
+          data-aos={props.positioning === "left" ? "fade-right" : "fade-left"}
+          data-aos-duration="750"
+          data-aos-delay="250"
+        ></div>
         <div className="dotted-border"></div>
-        <div className="quote-box">
+        <div className="quote-box" data-aos="flip-up">
           <img src={QuoteIcon} alt="quotation icon" />
           <span
             className="quote"

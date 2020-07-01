@@ -12,7 +12,7 @@ export default function ServiceCard(props) {
   }
 
   return (
-    <div className="service-card">
+    <div className="service-card" data-aos="fade-up" data-aos-duration="750">
       <div className="card-top">
         <div
           className="card-image"

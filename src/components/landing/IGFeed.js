@@ -59,7 +59,13 @@ export default function IGFeed() {
     return images.map((image, index) => {
       if (image.type === "GraphVideo") {
         return (
-          <div className="column" key={image.video_url} style={columnStyles}>
+          <div
+            className="column"
+            key={image.video_url}
+            style={columnStyles}
+            data-aos="fade-up"
+            data-aos-duration="750"
+          >
             <div className="overlay">
               <span>
                 <FontAwesomeIcon icon={faHeart} />
@@ -77,7 +83,13 @@ export default function IGFeed() {
         )
       } else {
         return (
-          <div className="column" key={image.image_url} style={columnStyles}>
+          <div
+            className="column"
+            key={image.image_url}
+            style={columnStyles}
+            data-aos="fade-up"
+            data-aos-duration="750"
+          >
             <div className="overlay">
               <span>
                 <FontAwesomeIcon icon={faHeart} />
@@ -111,7 +123,9 @@ export default function IGFeed() {
 
   return (
     <div id="igFeed" className="container">
-      <h1 className="mb-5">Table Talk On Instagram</h1>
+      <h1 className="mb-5" data-aos="fade-up" data-aos-duration="750">
+        Table Talk On Instagram
+      </h1>
       <div className="ig-grid">{imageFeed()}</div>
       <div className="text-center mt-5">
         <Button

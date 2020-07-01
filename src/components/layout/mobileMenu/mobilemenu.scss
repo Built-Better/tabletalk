@@ -151,3 +151,26 @@
   -webkit-transition: all 0.2s 0.7s, font-size 0.1s;
   transition: all 0.2s 0.7s, font-size 0.1s;
 }
+
+.collapse-nav {
+  .mobile-menu {
+    height: 40px;
+    width: 40px;
+  }
+
+  .mobile-menu-global {
+    height: 7px;
+  }
+
+  .mobile-menu-top {
+    top: 2px;
+  }
+
+  .mobile-menu-middle {
+    top: 16px;
+  }
+
+  .mobile-menu-bottom {
+    top: 30px;
+  }
+}

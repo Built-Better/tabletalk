@@ -22,8 +22,13 @@ export default function Services() {
   return (
     <Layout>
       <SEO title="Services" />
-      <div className="container default-container">
-        <h1>SERVICES</h1>
+      <div
+        className="container default-container"
+        style={{ overflow: "hidden" }}
+      >
+        <h1 data-aos="fade-up" data-aos-duration="750">
+          SERVICES
+        </h1>
         <ServiceCard
           title={data.content.service_1_title}
           body={data.content.service_1_body}
