@@ -6,20 +6,20 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
 import "./RodalCustom.scss"
 
-const customStyles = {
-  height: "fit-content",
-  maxWidth: "900px",
-  width: "auto",
-  position: "fixed",
-  zIndex: "1000",
-  fontFamily: "Oswald, sans-serif",
-}
+const RodalCustom = ({ content, open, toggle, fullScreen }) => {
+  const customStyles = {
+    height: fullScreen ? "auto" : "fit-content",
+    maxWidth: fullScreen ? "inherit" : "900px",
+    width: "auto",
+    position: "fixed",
+    zIndex: "1000",
+    fontFamily: "Oswald, sans-serif",
+  }
 
-const customMaskStyles = {
-  zIndex: "1000",
-}
+  const customMaskStyles = {
+    zIndex: "1000",
+  }
 
-const RodalCustom = ({ content, open, toggle }) => {
   return (
     <Rodal
       visible={open}

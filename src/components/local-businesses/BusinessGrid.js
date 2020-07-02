@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import "./BusinessGrid.scss"
 import RodalCustom from "../common/RodalCustom"
 import GridItem from "./GridItem"
+import RodalContent from "./RodalConent"
 
 export default function BusinessGrid() {
   const data = useStaticQuery(graphql`
@@ -16,8 +17,6 @@ export default function BusinessGrid() {
     }
   `).bbschema.contents
 
-  console.log(data)
-
   const [rodalOpen, setRodalOpen] = useState(false)
   const [selectedBusiness, setSelectedBusiness] = useState(false)
 
@@ -26,9 +25,8 @@ export default function BusinessGrid() {
   }
 
   const handleGridItemClick = itemInfo => {
-    console.log(itemInfo)
     setSelectedBusiness(itemInfo)
-    // toggleRodal()
+    toggleRodal()
   }
 
   const getGridColumns = () => {
@@ -53,8 +51,6 @@ export default function BusinessGrid() {
         break
     }
 
-    console.log(col_1_count, col_2_count, col_3_count)
-
     const getColumnMarkup = (startIndex, endIndex) => {
       let cols = []
       for (let i = startIndex; i < endIndex; i++) {
@@ -62,12 +58,16 @@ export default function BusinessGrid() {
           <GridItem
             info={data[i].content}
             handleGridItemClick={handleGridItemClick}
-            key={data[i].content.name}
+            key={i}
           />
         )
       }
 
-      return <div className="grid-col">{cols}</div>
+      return (
+        <div className="grid-col" key={`col-${startIndex}`}>
+          {cols}
+        </div>
+      )
     }
 
     let column_markup = []
@@ -84,20 +84,15 @@ export default function BusinessGrid() {
     return column_markup
   }
 
-  const grid_items = data.map(item => {
-    return (
-      <GridItem
-        info={item.content}
-        handleGridItemClick={handleGridItemClick}
-        key={item.content.name}
-      />
-    )
-  })
-
   return (
     <div className="business-grid">
       {getGridColumns()}
-      <RodalCustom open={rodalOpen} toggle={toggleRodal} content={"hi"} />
+      <RodalCustom
+        open={rodalOpen}
+        toggle={toggleRodal}
+        fullScreen={true}
+        content={<RodalContent info={selectedBusiness} />}
+      />
     </div>
   )
 }

@@ -31,6 +31,16 @@
   }
 }
 
+.button-alt {
+  background-color: $secondary-color;
+  color: white;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+}
+
 .button-large {
   font-size: 24px;
   padding: 5px 40px;

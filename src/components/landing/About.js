@@ -21,8 +21,6 @@ export default function About() {
     }
   `).bbschema.section
 
-  console.log(data)
-
   return (
     <ParallaxProvider>
       <div id="about" className="container position-relative">

@@ -50,6 +50,7 @@ main {
 
 .default-container {
   padding-top: 4rem;
+  min-height: calc(100vh - 200px);
 }
 
 // Toastify Overrides

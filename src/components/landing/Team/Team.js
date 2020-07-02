@@ -16,8 +16,6 @@ export default function Team() {
     }
   `).bbschema.contents
 
-  console.log(data)
-
   const team_members = data.map((member, index) => {
     const image_srcs = member.content.images.list_items.map(image => {
       return image.url

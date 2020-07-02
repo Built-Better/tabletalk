@@ -1,8 +1,15 @@
 import React from "react"
+import Loadable from "react-loadable"
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
-import Calendar from "../components/events/Calendar"
+
+const LoadableCallendar = Loadable({
+  loader: () => import("../components/events/Calendar"),
+  loading() {
+    return <div>Loading...</div>
+  },
+})
 
 const EventsPage = props => {
   return (
@@ -16,7 +23,8 @@ const EventsPage = props => {
           EVENTS
         </h1>
         <div data-aos="fade-up" data-aos-duration="750" data-aos-delay="500">
-          <Calendar />
+          {/* <Calendar /> */}
+          <LoadableCallendar />
         </div>
       </div>
     </Layout>

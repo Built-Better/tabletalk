@@ -33,7 +33,7 @@ const Footer = () => {
             </Link>
           </p>
           <p>
-            <Link to="/local-businesses" className="color-secondary">
+            <Link to="/local_businesses" className="color-secondary">
               Local Businesses
             </Link>
           </p>
