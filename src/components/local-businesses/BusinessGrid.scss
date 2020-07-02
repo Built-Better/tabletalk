@@ -1,0 +1,29 @@
+@import "../../utililties/theme.scss";
+
+.business-grid {
+  margin-top: 3rem;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  .grid-col {
+    flex: 33.33%;
+    max-width: 33.33%;
+
+    .grid-item {
+      padding: 10px;
+
+      .item-card {
+        box-shadow: 0px 3px 6px #00000029;
+        padding: 20px;
+        font-family: $body-font;
+
+        .business-type {
+          padding: 10px;
+          border: 1px solid black;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

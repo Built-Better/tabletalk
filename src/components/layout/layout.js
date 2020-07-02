@@ -52,7 +52,6 @@ const Layout = ({ children }) => {
   const state = useContext(GlobalStateContext)
   const dispatch = useContext(GlobalDispatchContext)
 
-  console.log(state)
   return (
     <div className="bootstrap-overrides">
       <Header siteTitle={data.site.siteMetadata.title} />

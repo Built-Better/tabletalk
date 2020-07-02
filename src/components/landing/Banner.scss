@@ -16,6 +16,10 @@
     transform: translate(-50%, -40%);
     width: fit-content;
 
+    @include xs {
+      top: 45%;
+    }
+
     h1 {
       font-size: 100px;
       text-transform: uppercase;

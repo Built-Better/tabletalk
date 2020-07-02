@@ -45,19 +45,31 @@
         opacity: 0;
 
         @include sm {
-          height: 100%;
-          width: 100%;
+          height: calc(100% - 2px);
+          width: calc(100% - 2px);
         }
 
         span {
+          font-size: 24px;
+
           &:nth-of-type(1) {
             padding-right: 25px;
+
+            @include sm {
+              padding-right: 10px;
+            }
           }
 
-          font-size: 24px;
+          @include sm {
+            font-size: 16px;
+          }
 
           svg {
             margin-right: 10px;
+
+            @include sm {
+              margin-right: 5px;
+            }
           }
         }
       }
