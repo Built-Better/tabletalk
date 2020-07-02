@@ -59,6 +59,10 @@
       max-width: 60%;
       max-height: 400px;
       margin-bottom: 2rem;
+
+      @include sm {
+        max-width: 90%;
+      }
     }
 
     h1 {
