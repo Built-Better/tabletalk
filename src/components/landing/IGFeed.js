@@ -132,7 +132,7 @@ export default function IGFeed() {
           type="primary"
           size="large"
           title="Follow Us"
-          externalLink="https://builtbetter.tech/"
+          externalLink="https://www.instagram.com/thisistabletalk/?hl=en"
         />
       </div>
     </div>

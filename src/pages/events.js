@@ -7,7 +7,7 @@ import SEO from "../components/layout/seo"
 const LoadableCallendar = Loadable({
   loader: () => import("../components/events/Calendar"),
   loading() {
-    return <div>Loading...</div>
+    return <div></div>
   },
 })
 
@@ -23,7 +23,6 @@ const EventsPage = props => {
           EVENTS
         </h1>
         <div data-aos="fade-up" data-aos-duration="750" data-aos-delay="500">
-          {/* <Calendar /> */}
           <LoadableCallendar />
         </div>
       </div>

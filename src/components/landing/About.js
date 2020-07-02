@@ -34,9 +34,9 @@ export default function About() {
             data-aos-duration="750"
           >
             <h2 className="header-font">{data.content.header_1}</h2>
-            <p
+            <div
               dangerouslySetInnerHTML={createMarkup(data.content.body_text_1)}
-            ></p>
+            ></div>
           </div>
           <div
             className="col-12 col-md-4 icon-col"
@@ -60,9 +60,9 @@ export default function About() {
             data-aos-duration="750"
           >
             <h2 className="header-font">{data.content.header_2}</h2>
-            <p
+            <div
               dangerouslySetInnerHTML={createMarkup(data.content.body_text_2)}
-            ></p>
+            ></div>
           </div>
         </div>
         <Parallax className="yellow-block" y={[-20, 20]}>
