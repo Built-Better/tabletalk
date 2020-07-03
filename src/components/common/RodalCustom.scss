@@ -17,7 +17,7 @@
   padding: 50px;
 
   @include sm {
-    padding: 10px;
+    padding: 0px;
   }
 
   h2 {
@@ -46,7 +46,7 @@
 
     @include sm {
       right: 10px;
-      top: 10px;
+      top: 0;
     }
   }
 

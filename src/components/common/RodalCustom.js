@@ -12,9 +12,8 @@ const RodalCustom = ({ content, open, toggle, fullScreen }) => {
     maxWidth: fullScreen ? "inherit" : "900px",
     width: "auto",
     position: "fixed",
-    right: "-17px",
-    marginRight: "17px",
-    overflowY: "scroll",
+    right: fullScreen ? "-17px" : "0",
+    overflowY: fullScreen ? "scroll" : "auto",
     zIndex: "1000",
     fontFamily: "Oswald, sans-serif",
   }
@@ -31,7 +30,7 @@ const RodalCustom = ({ content, open, toggle, fullScreen }) => {
       customMaskStyles={customMaskStyles}
       showCloseButton={false}
     >
-      <div className="rodal-content layout">
+      <div className="rodal-content container position-relative">
         <FontAwesomeIcon
           className="close-rodal"
           icon={faTimes}
