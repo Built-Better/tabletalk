@@ -54,11 +54,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `https://builtbetter.tech${OGImage}`,
+          content: `https://5efe6fb88806870008e810ce--keen-raman-2a8d1f.netlify.app/${OGImage}`,
         },
         {
           property: `og:url`,
-          content: `https://builtbetter.tech/`,
+          content: `https://5efe6fb88806870008e810ce--keen-raman-2a8d1f.netlify.app/`,
         },
         {
           name: `twitter:card`,
