@@ -12,6 +12,9 @@ const RodalCustom = ({ content, open, toggle, fullScreen }) => {
     maxWidth: fullScreen ? "inherit" : "900px",
     width: "auto",
     position: "fixed",
+    right: "-17px",
+    marginRight: "17px",
+    overflowY: "scroll",
     zIndex: "1000",
     fontFamily: "Oswald, sans-serif",
   }

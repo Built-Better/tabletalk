@@ -15,21 +15,18 @@ export default function ContactForm() {
   }
 
   const onSubmit = data => {
-    console.log(data)
-    reset()
-    toast.success(
-      "YOUR MESSAGE WAS SENT! \n ⏱️ We'll get to you as soon as we can!"
-    )
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: encode({ "form-name": "contact", ...data }),
-    // })
-    //   .then(() => {
-    //     reset()
-    //     toast.success("🚀 YOUR MESSAGE WAS SENT! \n ⏱️ We'll get to you as soon as we can!")
-    //   })
-    //   .catch(error => alert(error))
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...data }),
+    })
+      .then(() => {
+        reset()
+        toast.success(
+          "YOUR MESSAGE WAS SENT! \n ⏱️ We'll get to you as soon as we can!"
+        )
+      })
+      .catch(error => alert(error))
   }
 
   return (

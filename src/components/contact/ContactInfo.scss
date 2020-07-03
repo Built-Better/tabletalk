@@ -36,9 +36,21 @@
     display: flex;
     justify-content: center;
 
+    @include sm {
+      display: block;
+    }
+
     .other-info {
+      @include sm {
+        text-align: center;
+      }
+
       &:nth-child(1) {
         text-align: right;
+
+        @include sm {
+          text-align: center;
+        }
       }
 
       p {

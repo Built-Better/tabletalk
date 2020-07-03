@@ -16,7 +16,7 @@ export default function DonateRodalContent() {
         our guests with a safe space to talk as well as refreshments and food.
       </p>
       <p>
-        Talk Talk is very active within the community and donations like yours
+        Table Talk is very active within the community and donations like yours
         make this possible!
       </p>
       <p>

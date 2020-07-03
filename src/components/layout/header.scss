@@ -65,7 +65,13 @@ header {
   }
 
   .menu-expand {
-    width: 40px !important;
+    @include md {
+      width: 0px !important;
+    }
+
+    @include sm {
+      width: 40px !important;
+    }
   }
 
   &.collapse-nav {

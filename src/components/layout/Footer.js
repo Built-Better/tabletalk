@@ -68,7 +68,7 @@ const Footer = () => {
             </div>
           </a>
           <a
-            href="https://www.instagram.com/builtbetter.tech/"
+            href="https://www.instagram.com/thisistabletalk/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -78,7 +78,7 @@ const Footer = () => {
             </div>
           </a>
           <a
-            href="https://twitter.com/builtbettertech"
+            href="https://twitter.com/thisistabletalk"
             target="_blank"
             rel="noopener noreferrer"
           >
