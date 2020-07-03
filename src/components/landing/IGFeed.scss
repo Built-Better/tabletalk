@@ -40,6 +40,12 @@
         top: 5px;
         color: white;
         font-size: 22px;
+
+        @include sm {
+          right: 8px;
+          top: 0px;
+          font-size: 18px;
+        }
       }
 
       .overlay {
