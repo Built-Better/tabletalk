@@ -34,6 +34,14 @@
         }
       }
 
+      .video-icon {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        color: white;
+        font-size: 22px;
+      }
+
       .overlay {
         position: absolute;
         height: calc(100% - 10px);

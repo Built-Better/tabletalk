@@ -4,7 +4,7 @@ import axios from "axios"
 import "./IGFeed.scss"
 import Button from "../common/Button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHeart, faComment } from "@fortawesome/free-solid-svg-icons"
+import { faHeart, faComment, faVideo } from "@fortawesome/free-solid-svg-icons"
 
 export default function IGFeed() {
   const [images, setImages] = useState([])
@@ -17,12 +17,14 @@ export default function IGFeed() {
         `https://www.instagram.com/graphql/query/?query_hash=eddbde960fed6bde675388aac39a3657&variables={"id": "${userID}", "first": 12}`
       )
       .then(res => {
+        console.log(res.data)
         const images = res.data.data.user.edge_owner_to_timeline_media.edges.map(
           (edge, index) => {
             return {
               type: edge.node.__typename,
               video_url: edge.node.video_url,
               image_url: edge.node.thumbnail_resources[4].src,
+              thumbmail_url: edge.node.thumbnail_src,
               likes: edge.node.edge_media_preview_like.count,
               comments: edge.node.edge_media_to_comment.count,
             }
@@ -57,53 +59,67 @@ export default function IGFeed() {
     }
 
     return images.map((image, index) => {
+      // if (image.type === "GraphVideo") {
+      //   return (
+      //     <div
+      //       className="column"
+      //       key={image.video_url}
+      //       style={columnStyles}
+      //       data-aos="fade-up"
+      //       data-aos-duration="750"
+      //     >
+      //       <div className="overlay">
+      //         <span>
+      //           <FontAwesomeIcon icon={faHeart} />
+      //           {image.likes}
+      //         </span>
+      //         <span>
+      //           <FontAwesomeIcon icon={faComment} />
+      //           {image.comments}
+      //         </span>
+      //       </div>
+      //       <video autoPlay loop muted playsInline>
+      //         <source src={image.video_url} />
+      //       </video>
+      //     </div>
+      //   )
+      // } else {
+
+      let src
       if (image.type === "GraphVideo") {
-        return (
-          <div
-            className="column"
-            key={image.video_url}
-            style={columnStyles}
-            data-aos="fade-up"
-            data-aos-duration="750"
-          >
-            <div className="overlay">
-              <span>
-                <FontAwesomeIcon icon={faHeart} />
-                {image.likes}
-              </span>
-              <span>
-                <FontAwesomeIcon icon={faComment} />
-                {image.comments}
-              </span>
-            </div>
-            <video autoPlay loop muted playsInline>
-              <source src={image.video_url} />
-            </video>
-          </div>
-        )
+        src = image.thumbmail_url
       } else {
-        return (
-          <div
-            className="column"
-            key={image.image_url}
-            style={columnStyles}
-            data-aos="fade-up"
-            data-aos-duration="750"
-          >
-            <div className="overlay">
-              <span>
-                <FontAwesomeIcon icon={faHeart} />
-                {image.likes}
-              </span>
-              <span>
-                <FontAwesomeIcon icon={faComment} />
-                {image.comments}
-              </span>
-            </div>
-            <img src={image.image_url} alt={"instagram feed media " + index} />
-          </div>
-        )
+        src = image.image_url
       }
+      return (
+        <div
+          className="column"
+          key={image.image_url}
+          style={columnStyles}
+          data-aos="fade-up"
+          data-aos-duration="750"
+        >
+          <div className="overlay">
+            <span>
+              <FontAwesomeIcon icon={faHeart} />
+              {image.likes}
+            </span>
+            <span>
+              <FontAwesomeIcon icon={faComment} />
+              {image.comments}
+            </span>
+          </div>
+          <img src={src} alt={"instagram feed media " + index} />
+          {image.type === "GraphVideo" ? (
+            <span className="video-icon">
+              <FontAwesomeIcon icon={faVideo} />
+            </span>
+          ) : (
+            ""
+          )}
+        </div>
+      )
+      // }
     })
   }
 
