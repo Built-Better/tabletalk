@@ -1,6 +1,10 @@
 @import "../../utililties/theme.scss";
 
 .donate-rodal {
+  @include sm {
+    padding-top: 2rem;
+  }
+
   h1 {
     margin-bottom: 0;
   }
