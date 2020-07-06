@@ -17,7 +17,6 @@ export default function IGFeed() {
         `https://www.instagram.com/graphql/query/?query_hash=eddbde960fed6bde675388aac39a3657&variables={"id": "${userID}", "first": 12}`
       )
       .then(res => {
-        console.log(res.data)
         const images = res.data.data.user.edge_owner_to_timeline_media.edges.map(
           (edge, index) => {
             return {

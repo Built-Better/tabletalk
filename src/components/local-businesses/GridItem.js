@@ -5,10 +5,7 @@ import Button from "../common/Button"
 
 export default function GridItem(props) {
   return (
-    <div
-      className="grid-item"
-      onClick={() => props.handleGridItemClick(props.info)}
-    >
+    <div className="grid-item">
       <div className="item-card" data-aos="fade-up" data-aos-duration="750">
         <h2 className="business-name">{props.info.name}</h2>
         <h3 className="business-type">{props.info.business_type}</h3>
@@ -16,7 +13,7 @@ export default function GridItem(props) {
           type="primary"
           title="More Info"
           size="large"
-          handleClick={props.handleGridItemClick}
+          handleClick={() => props.handleGridItemClick(props.info)}
         />
       </div>
     </div>

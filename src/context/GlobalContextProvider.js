@@ -5,6 +5,7 @@ export const GlobalDispatchContext = React.createContext()
 
 const initialState = {
   donateOpen: false,
+  bodyScroll: true,
 }
 
 function reducer(state, action) {
@@ -13,6 +14,12 @@ function reducer(state, action) {
       return {
         ...state,
         donateOpen: !state.donateOpen,
+        bodyScroll: !state.bodyScroll,
+      }
+    case "TOGGLE_BODY_SCROLL":
+      return {
+        ...state,
+        bodyScroll: !state.bodyScroll,
       }
     default:
       throw new Error("Bad action type")

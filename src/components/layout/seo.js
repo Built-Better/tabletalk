@@ -5,9 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
+import { GlobalStateContext } from "../../context/GlobalContextProvider"
 import { useStaticQuery, graphql } from "gatsby"
 import OGImage from "../../images/og-full-white.png"
 
@@ -27,6 +28,12 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+
+  // Global State
+  const state = useContext(GlobalStateContext)
+
+  // Variable Styles
+  const bodyScroll = state.bodyScroll ? "initial" : "hidden"
 
   return (
     <Helmet
@@ -78,7 +85,13 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
-      <style type="text/css">{``}</style>
+      <style type="text/css">
+        {`
+          body {
+            overflow: ${bodyScroll};
+          }
+        `}
+      </style>
     </Helmet>
   )
 }

@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "./BusinessGrid.scss"
+import { GlobalDispatchContext } from "../../context/GlobalContextProvider"
 import RodalCustom from "../common/RodalCustom"
 import GridItem from "./GridItem"
 import RodalContent from "./RodalConent"
@@ -17,10 +18,14 @@ export default function BusinessGrid() {
     }
   `).bbschema.contents
 
+  // Global State
+  const dispatch = useContext(GlobalDispatchContext)
+
   const [rodalOpen, setRodalOpen] = useState(false)
   const [selectedBusiness, setSelectedBusiness] = useState(false)
 
   const toggleRodal = () => {
+    dispatch({ type: "TOGGLE_BODY_SCROLL" })
     setRodalOpen(!rodalOpen)
   }
 
