@@ -60,6 +60,21 @@ footer {
       margin: 0.25em;
     }
 
+    .admin-attr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .admin {
+      &:hover {
+        p,
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+
     .builtbetter {
       svg {
         margin-left: 5px;

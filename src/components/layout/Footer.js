@@ -100,12 +100,20 @@ const Footer = () => {
         <p className="copy text-center">
           © {new Date().getFullYear()} This is Table Talk
         </p>
-        <p className="builtbetter">
-          <a href="https://builtbetter.tech/">
-            Built Better in Victoria BC
-            <FontAwesomeIcon className="footer-heart" icon={faHeart} />
-          </a>
-        </p>
+        <div className="admin-attr">
+          <p className="admin">
+            <a href="https://buildingblockscms.tech/">Admin</a>
+          </p>
+          <p> | </p>
+          <p className="builtbetter">
+            <a href="https://builtbetter.tech/">
+              Built Better in Victoria BC
+              <FontAwesomeIcon className="footer-heart" icon={faHeart} />
+            </a>
+          </p>
+        </div>
+
+        <p></p>
       </div>
     </footer>
   )
