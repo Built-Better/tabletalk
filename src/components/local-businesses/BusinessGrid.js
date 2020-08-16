@@ -11,7 +11,7 @@ export default function BusinessGrid() {
   const data = useStaticQuery(graphql`
     query BusinessesQuery {
       bbschema {
-        contents(content_type: "local_business") {
+        contents(id: "5efd4d8eb1075f4a8e91164f") {
           content
         }
       }

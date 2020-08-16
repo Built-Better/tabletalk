@@ -9,7 +9,7 @@ export default function Team() {
   const data = useStaticQuery(graphql`
     query TeamQuery {
       bbschema {
-        contents(content_type: "team_member") {
+        contents(id: "5ef9307c95365a24083a182a") {
           content
         }
       }
