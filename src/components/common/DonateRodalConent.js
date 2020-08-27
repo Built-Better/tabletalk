@@ -30,7 +30,7 @@ export default function DonateRodalContent() {
         type="primary"
         size="large"
         title="Donate Today"
-        externalLink="https://www.paypal.com/donate/?token=geMkdAaxMJz2oUmQB-1bJBPRNT46kN8qokLzv1fYLrHYLTqmbfED1ovqhHoM75D5Ul-3zG&country.x=CA&locale.x=CA"
+        externalLink=" https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Q45BF8GHFY68Q&source=url"
       />
     </div>
   )
