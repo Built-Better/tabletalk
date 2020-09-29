@@ -102,7 +102,7 @@ const Footer = () => {
         </p>
         <div className="admin-attr">
           <p className="admin">
-            <a href="https://buildingblockscms.tech/">Admin</a>
+            <a href="https://dashboard.buildingblockscms.tech/">Admin</a>
           </p>
           <p> | </p>
           <p className="builtbetter">
