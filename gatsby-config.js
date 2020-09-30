@@ -15,7 +15,7 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: "bbschema",
         // Url to query from
-        url: "https://www.buildingblockscms.tech/graphiql",
+        url: "https://www.dashboard.buildingblockscms.tech/graphiql",
         // HTTP headers
         headers: {
           // Learn about environment variables: https://gatsby.dev/env-vars
