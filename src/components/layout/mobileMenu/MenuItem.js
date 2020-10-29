@@ -11,9 +11,13 @@ export default function MenuItem(props) {
     navigate(props.route)
   }
 
+  const classes = `mobile-menu-global ${
+    props.lastItem ? `mobile-menu-bottom` : `mobile-menu-middle`
+  }`
+
   return (
     <li
-      className={`mobile-menu-global mobile-menu-middle ${
+      className={`${classes} ${
         props.menuOpen ? "mobile-menu-middle-expand expand" : ""
       }`}
       style={props.menuOpen ? styles : {}}

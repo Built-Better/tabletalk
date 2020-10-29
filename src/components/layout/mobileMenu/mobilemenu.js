@@ -27,7 +27,7 @@ export default function MobileMenu() {
   const menuStyle = {
     width: windowWidth,
     left: `-${windowWidth - 60}px`,
-    height: windowHeight / 6,
+    height: windowHeight / 5,
   }
 
   return (
@@ -86,8 +86,9 @@ export default function MobileMenu() {
           top={menuStyle.height * 4}
           title="Contact"
           route="/contact"
+          lastItem={true}
         />
-        <li
+        {/* <li
           className={`mobile-menu-global mobile-menu-bottom ${
             menuOpen ? "mobile-menu-bottom-expand expand" : ""
           }`}
@@ -101,7 +102,7 @@ export default function MobileMenu() {
           >
             Donate
           </span>
-        </li>
+        </li> */}
       </ul>
     </div>
   )

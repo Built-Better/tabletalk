@@ -54,11 +54,11 @@ const Header = ({ siteTitle }) => {
           <Link to="/services">Services</Link>
           <Link to="/local_businesses">Local Businesses</Link>
           <Link to="/contact">Contact</Link>
-          <Button
+          {/* <Button
             type="secondary"
             title="Donate"
             handleClick={handleDonateClick}
-          />
+          /> */}
         </span>
         <MobileMenu />
       </div>
