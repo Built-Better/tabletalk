@@ -14,7 +14,7 @@
     "@fullcalendar/list": "^5.1.0",
     "@fullcalendar/react": "^5.1.0",
     "aos": "^2.3.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.0",
     "gatsby": "^2.20.22",
     "gatsby-image": "^2.3.2",
