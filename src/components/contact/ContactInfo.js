@@ -8,11 +8,11 @@ export default function ContactInfo() {
       <h2 className="text-center header-font font-weight-bold">
         Other Contacts at Table Talk
       </h2>
-      <div className="phone text-center">
+      {/* <div className="phone text-center">
         <h4>Telephone</h4>
         <a href="tel:+1250588-4927">+1 (250) 588-4927</a>
-      </div>
-      <div className="other-contact">
+      </div> */}
+      <div className="other-contact" style={{ marginTop: "3rem" }}>
         <div className="other-info">
           <h4>Parker Johnson</h4>
           <p>Table Talk Creator</p>

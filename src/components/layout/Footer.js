@@ -45,9 +45,9 @@ const Footer = () => {
         </div>
         <div className="col-12 col-md-6 col-lg-3 order-3 order-md-2">
           <p className="font-weight-bold">Contact</p>
-          <a href="tel:+1250588-4927" className="color-secondary">
+          {/* <a href="tel:+1250588-4927" className="color-secondary">
             <p>+1 (250) 588-4927</p>
-          </a>
+          </a> */}
           <a
             href="mailto:thisistabletalk@gmail.com"
             className="color-secondary"
